@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
+
+* {
+    font-family: inherit;
+}
+body {
+    text-align: center;
+    font-family: "New Rocker", system-ui;
+    background-color: #F2B101;
+    font-size: 1.5rem;
+}
+
+.container {
+    text-align: center;
+    min-height: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.choices-container {
+    display: flex;
+    gap: 5rem;
+}
+
+.btn {
+    transition: transform ease-in-out 0.15s ;
+}
+
+.btn:hover {
+   transform: scale(1.2);
+}
+
+.btn:active {
+   transform: scale(0.9);
+}
+
+.restart-game {
+    background-color: #28e20f8f;
+    font-size: 1.5rem;
+    font-weight: 600;  
+    padding: 0.5rem 1rem;
+    border: 1px solid #2e68268f;
+    border-radius: 0.2rem;
+    visibility: hidden;
+}
+
+.human-choice-btn {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
