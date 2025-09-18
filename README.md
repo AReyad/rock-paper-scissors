@@ -1,5 +1,5 @@
 # Rock-Paper-Scissors
-![Overview Image](./imgs/game-overview.png)
+<p align="center"> <img src="./imgs/game-overview.png" alt="Overview image of the game"/></p>
 
 A basic rock paper scissors implementation with JavaScript that allows users to play against the computer.
 
