@@ -6,9 +6,11 @@ const matchResultText = document.getElementById('matchResultText');
 const roundResultText = document.getElementById('roundResultText');
 const humanChoiceBtns = document.querySelectorAll('.human-choice-btn');
 const restartGameBtn = document.querySelector('.restart-game');
+const tiesCountText = document.querySelector('#tiesCountText')
 
 let humanScore = 0;
 let computerScore = 0;
+let tiesCount = 0
 let roundResult;
 let matchResult;
 let displayHumanChoice;
@@ -30,6 +32,7 @@ function playRound(humanChoice, computerChoice) {
     capitalizeHumanChoice = humanChoice[0].toUpperCase() + humanChoice.substring(1);
     if(computerChoice === humanChoice) {
             roundResult = `It's a tie! ${capitalizeHumanChoice} ties with ${capitalizeComputerChoice}` 
+            tiesCount++
             roundResultText.textContent = roundResult
     } else if (computerChoice == 'rock' && humanChoice == 'scissors' || 
             computerChoice == 'scissors' && humanChoice == 'paper' || 
@@ -59,6 +62,11 @@ function updateDisplay() {
     humanChoiceText.textContent = `You: ${capitalizeHumanChoice}`;
     humanScoreText.textContent = `Your score: ${humanScore}`
     computerScoreText.textContent = `Computer score: ${computerScore}`
+    if(tiesCount == 1) {
+        tiesCountText.textContent = `You tied with Computer: ${tiesCount} time`
+    } else if(tiesCount > 1) {
+        tiesCountText.textContent = `You tied with Computer: ${tiesCount} times`
+    }
 };
 
 humanChoiceBtns.forEach((btn) => {
@@ -83,12 +91,14 @@ humanChoiceBtns.forEach((btn) => {
 function restartGame() {
     humanScore = 0;
     computerScore = 0;
+    tiesCount = 0;
     roundResultText.textContent = "";
     matchResultText.textContent = "";
     computerChoiceText.textContent = "";
     humanChoiceText.textContent = "";
     humanScoreText.textContent = "";
     computerScoreText.textContent = "";
+    tiesCountText.textContent = "";
     restartGameBtn.style.visibility = "hidden";
 }
 

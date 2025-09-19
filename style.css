@@ -3,6 +3,7 @@
 * {
     font-family: inherit;
 }
+
 body {
     text-align: center;
     font-family: "New Rocker", system-ui;
@@ -19,13 +20,18 @@ body {
     align-items: center;
 }
 
-.choices-container {
+.inner-container {
     display: flex;
     gap: 5rem;
 }
 
 .btn {
-    transition: transform ease-in-out 0.15s ;
+    transition: transform ease-in-out 0.15s;
+    background-color: transparent;
+}
+
+img {
+    background-color: transparent;
 }
 
 .btn:hover {
